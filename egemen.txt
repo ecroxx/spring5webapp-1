@@ -1,2 +1,3 @@
 hello egemen ozkan selam1- terminal
  git account ecrox is changing file now
+  intellij account is changeing file now to identify who is intelij account
