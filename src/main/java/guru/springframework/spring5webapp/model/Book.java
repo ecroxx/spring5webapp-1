@@ -18,7 +18,7 @@ public class Book {
     @OneToOne
     private Publisher publisher;
 
-    @ManyToMany
+    @ManyToMany/*(cascade = CascadeType.ALL)*/
     @JoinTable(name = "author_book", joinColumns = @JoinColumn(name = "book_id"),
     inverseJoinColumns = @JoinColumn(name = "author_id"))
     private Set<Author> authors = new HashSet<>();

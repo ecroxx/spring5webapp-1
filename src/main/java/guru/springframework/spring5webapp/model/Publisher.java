@@ -1,9 +1,6 @@
 package guru.springframework.spring5webapp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by jt on 5/17/17.
@@ -16,6 +13,26 @@ public class Publisher {
     private Long id;
     private String name;
     private String address;
+
+    @OneToOne
+    private Book book;
+
+    @ManyToOne
+    private PublisherGroupCpmpany publisherGroupCpmpany;
+
+    public Publisher(String name, String address, Book book) {
+        this.name = name;
+        this.address = address;
+        this.book = book;
+    }
+
+    public Publisher(String name, String address) {
+        this.name = name;
+        this.address = address;
+    }
+
+    public Publisher() {
+    }
 
     public Long getId() {
         return id;
@@ -39,6 +56,22 @@ public class Publisher {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public PublisherGroupCpmpany getPublisherGroupCpmpany() {
+        return publisherGroupCpmpany;
+    }
+
+    public void setPublisherGroupCpmpany(PublisherGroupCpmpany publisherGroupCpmpany) {
+        this.publisherGroupCpmpany = publisherGroupCpmpany;
     }
 
     @Override
